@@ -1,1 +1,51 @@
-export default function PostPage() { return <div>帖子详情</div> }
+import { supabase } from '@/lib/supabase'
+import Image from 'next/image'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import LikeButton from '@/components/LikeButton'
+
+export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const [{ data: post }, { data: likes }] = await Promise.all([
+    supabase.from('posts').select('*').eq('id', id).single(),
+    supabase.from('likes').select('id').eq('post_id', id),
+  ])
+
+  if (!post) notFound()
+
+  return (
+    <div className="min-h-screen pb-8">
+      {/* Header */}
+      <div className="flex items-center px-4 pt-12 pb-4" style={{ borderBottom: '1px solid var(--border)' }}>
+        <Link href="/" className="text-xl mr-3" style={{ color: 'var(--text-muted)' }}>←</Link>
+        <span className="font-medium" style={{ color: 'var(--text)' }}>留言详情</span>
+      </div>
+
+      {/* 照片 */}
+      <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
+        <Image src={post.photo_url} alt="留言照片" fill className="object-cover" />
+      </div>
+
+      {/* 内容 */}
+      <div className="px-4 py-4">
+        <div className="flex items-center justify-between mb-3">
+          <span className="font-medium" style={{ color: 'var(--text)' }}>{post.animal_nickname}</span>
+          <span className="text-sm" style={{ color: 'var(--text-muted)' }}>
+            {new Date(post.created_at).toLocaleDateString('zh-CN')}
+          </span>
+        </div>
+        <p className="text-base leading-relaxed mb-5" style={{ color: 'var(--text)' }}>
+          {post.message}
+        </p>
+        <LikeButton postId={post.id} initialCount={likes?.length ?? 0} />
+      </div>
+
+      {/* 评论区占位，Task 11 补全 */}
+      <div className="mx-4 mt-4" style={{ borderTop: '1px solid var(--border)' }} />
+      <div className="px-4 pt-4">
+        <h2 className="text-sm font-semibold mb-4" style={{ color: 'var(--text)' }}>评论</h2>
+        <p className="text-sm text-center py-6" style={{ color: 'var(--text-muted)' }}>评论功能即将上线</p>
+      </div>
+    </div>
+  )
+}
