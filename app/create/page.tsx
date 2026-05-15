@@ -1,5 +1,5 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { supabase } from '@/lib/supabase'
@@ -14,12 +14,20 @@ export default function CreatePage() {
   const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState('')
+  const [nickname, setNickname] = useState('')
+
+  useEffect(() => {
+    setNickname(localStorage.getItem('bb_nickname') ?? '...')
+  }, [])
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0]
     if (!f) return
     setFile(f)
-    setPreview(URL.createObjectURL(f))
+    setPreview((prev) => {
+      if (prev) URL.revokeObjectURL(prev)
+      return URL.createObjectURL(f)
+    })
   }
 
   async function handleSubmit() {
@@ -160,9 +168,7 @@ export default function CreatePage() {
         >
           <span>以</span>
           <span className="font-medium" style={{ color: 'var(--primary)' }}>
-            {typeof window !== 'undefined'
-              ? (localStorage.getItem('bb_nickname') ?? '...')
-              : '...'}
+            {nickname}
           </span>
           <span>的身份发布</span>
         </div>
