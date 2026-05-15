@@ -126,7 +126,7 @@ export default function CreatePage() {
         >
           {preview ? (
             <div className="relative w-full h-full">
-              <Image src={preview} alt="预览" fill className="object-cover" />
+              <Image src={preview} alt="预览" fill className="object-cover" sizes="(max-width: 480px) 100vw, 480px" />
             </div>
           ) : (
             <div className="flex flex-col items-center gap-2" style={{ color: 'var(--text-muted)' }}>

@@ -23,7 +23,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
         <span className="font-medium" style={{ color: 'var(--text)' }}>留言详情</span>
       </div>
       <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-        <Image src={post.photo_url} alt="留言照片" fill className="object-cover" />
+        <Image src={post.photo_url} alt="留言照片" fill className="object-cover" sizes="(max-width: 480px) 100vw, 480px" />
       </div>
       <div className="px-4 py-4">
         <div className="flex items-center justify-between mb-3">

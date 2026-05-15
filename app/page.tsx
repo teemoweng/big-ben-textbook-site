@@ -13,31 +13,34 @@ export default function FeedPage() {
 
   useEffect(() => {
     async function load() {
-      const { data } = await supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
+      try {
+        const { data } = await supabase
+          .from('posts')
+          .select('*')
+          .order('created_at', { ascending: false })
 
-      if (!data) return
+        if (!data) return
 
-      const ids = data.map((p) => p.id)
+        const ids = data.map((p) => p.id)
 
-      const [{ data: likes }, { data: comments }] = await Promise.all([
-        supabase.from('likes').select('post_id').in('post_id', ids),
-        supabase.from('comments').select('post_id').in('post_id', ids),
-      ])
+        const [{ data: likes }, { data: comments }] = await Promise.all([
+          supabase.from('likes').select('post_id').in('post_id', ids),
+          supabase.from('comments').select('post_id').in('post_id', ids),
+        ])
 
-      const countMap: Record<string, { likes: number; comments: number }> = {}
-      ids.forEach((id) => {
-        countMap[id] = {
-          likes: likes?.filter((l) => l.post_id === id).length ?? 0,
-          comments: comments?.filter((c) => c.post_id === id).length ?? 0,
-        }
-      })
+        const countMap: Record<string, { likes: number; comments: number }> = {}
+        ids.forEach((id) => {
+          countMap[id] = {
+            likes: likes?.filter((l) => l.post_id === id).length ?? 0,
+            comments: comments?.filter((c) => c.post_id === id).length ?? 0,
+          }
+        })
 
-      setPosts(data)
-      setCounts(countMap)
-      setLoading(false)
+        setPosts(data)
+        setCounts(countMap)
+      } finally {
+        setLoading(false)
+      }
     }
     load()
   }, [])

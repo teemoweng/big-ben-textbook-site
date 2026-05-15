@@ -68,7 +68,7 @@ export default function MePage() {
             {posts.map((post) => (
               <Link key={post.id} href={`/post/${post.id}`}>
                 <div className="relative w-full" style={{ aspectRatio: '1' }}>
-                  <Image src={post.photo_url} alt="我的留言" fill className="object-cover" />
+                  <Image src={post.photo_url} alt="我的留言" fill className="object-cover" sizes="(max-width: 480px) 33vw, 160px" />
                 </div>
               </Link>
             ))}
@@ -113,7 +113,7 @@ export default function MePage() {
             style={{ background: 'var(--card)', border: '1px solid var(--primary)' }}
           >
             <div className="relative w-12 h-12 rounded-xl overflow-hidden flex-shrink-0">
-              <Image src={foundPost.photo_url} alt="" fill className="object-cover" />
+              <Image src={foundPost.photo_url} alt="" fill className="object-cover" sizes="48px" />
             </div>
             <div>
               <p className="text-sm font-medium" style={{ color: 'var(--text)' }}>{foundPost.animal_nickname}</p>

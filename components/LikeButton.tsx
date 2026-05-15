@@ -28,14 +28,18 @@ export default function LikeButton({ postId, initialCount }: {
     const { deviceId } = getOrCreateIdentity()
 
     if (liked) {
-      await supabase.from('likes').delete()
+      const { error } = await supabase.from('likes').delete()
         .eq('post_id', postId).eq('device_id', deviceId)
-      setCount((c) => c - 1)
-      setLiked(false)
+      if (!error) {
+        setCount((c) => c - 1)
+        setLiked(false)
+      }
     } else {
-      await supabase.from('likes').insert({ post_id: postId, device_id: deviceId })
-      setCount((c) => c + 1)
-      setLiked(true)
+      const { error } = await supabase.from('likes').insert({ post_id: postId, device_id: deviceId })
+      if (!error) {
+        setCount((c) => c + 1)
+        setLiked(true)
+      }
     }
     setLoading(false)
   }

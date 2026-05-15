@@ -8,18 +8,26 @@ export default function CommentInput({ postId }: { postId: string }) {
   const router = useRouter()
   const [text, setText] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   async function submit() {
     if (!text.trim() || submitting) return
     setSubmitting(true)
+    setError('')
     const { deviceId, nickname } = getOrCreateIdentity()
 
-    await supabase.from('comments').insert({
+    const { error: insertError } = await supabase.from('comments').insert({
       post_id: postId,
       device_id: deviceId,
       animal_nickname: nickname,
       content: text.trim().slice(0, 200),
     })
+
+    if (insertError) {
+      setError('评论失败，请重试')
+      setSubmitting(false)
+      return
+    }
 
     setText('')
     setSubmitting(false)
@@ -27,30 +35,33 @@ export default function CommentInput({ postId }: { postId: string }) {
   }
 
   return (
-    <div
-      className="flex gap-3 items-center mt-4 px-3 py-2 rounded-2xl sticky bottom-24"
-      style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
-    >
-      <input
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        onKeyDown={(e) => e.key === 'Enter' && submit()}
-        placeholder="写评论…"
-        maxLength={200}
-        className="flex-1 bg-transparent outline-none text-sm"
-        style={{ color: 'var(--text)' }}
-      />
-      <button
-        onClick={submit}
-        disabled={!text.trim() || submitting}
-        className="text-sm font-semibold px-3 py-1 rounded-full"
-        style={{
-          background: text.trim() ? 'var(--primary)' : 'transparent',
-          color: text.trim() ? '#fff' : 'var(--text-muted)',
-        }}
+    <>
+      <div
+        className="flex gap-3 items-center mt-4 px-3 py-2 rounded-2xl sticky bottom-24"
+        style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
       >
-        发
-      </button>
-    </div>
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && submit()}
+          placeholder="写评论…"
+          maxLength={200}
+          className="flex-1 bg-transparent outline-none text-sm"
+          style={{ color: 'var(--text)' }}
+        />
+        <button
+          onClick={submit}
+          disabled={!text.trim() || submitting}
+          className="text-sm font-semibold px-3 py-1 rounded-full"
+          style={{
+            background: text.trim() ? 'var(--primary)' : 'transparent',
+            color: text.trim() ? '#fff' : 'var(--text-muted)',
+          }}
+        >
+          发
+        </button>
+      </div>
+      {error && <p className="text-xs mt-1 px-3" style={{ color: '#c0392b' }}>{error}</p>}
+    </>
   )
 }
