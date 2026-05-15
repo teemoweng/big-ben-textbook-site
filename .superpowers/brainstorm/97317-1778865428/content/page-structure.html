@@ -1,0 +1,200 @@
+<h2>页面结构 · 信息架构</h2>
+<p class="subtitle">5个页面，3个底部导航入口</p>
+
+<div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-bottom: 20px;">
+
+  <!-- Phone: Main Feed -->
+  <div style="text-align:center;">
+    <div style="background:#111; border-radius:18px; padding:8px; width:130px; box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+      <div style="font-size:8px; color:#666; text-align:right; padding-bottom:4px;">9:41</div>
+      <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:6px 8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:#fff; font-size:9px; font-weight:700;">大本钟留言墙</span>
+        </div>
+        <div style="background:#0d0d0d; border-radius:12px; display:flex; padding:2px; margin-top:4px;">
+          <div style="flex:1; background:#6366f1; border-radius:10px; text-align:center; padding:2px 0; font-size:7px; color:#fff;">动态</div>
+          <div style="flex:1; text-align:center; padding:2px 0; font-size:7px; color:#555;">照片墙</div>
+        </div>
+      </div>
+      <div style="background:#0d0d0d; padding:5px; display:flex; flex-direction:column; gap:4px;">
+        <div style="background:#1e1e1e; border-radius:6px; overflow:hidden;">
+          <div style="height:45px; background:linear-gradient(135deg,#667eea,#764ba2);"></div>
+          <div style="padding:4px 6px;">
+            <div style="font-size:7px; color:#aaa;">🐧 蓝色企鹅</div>
+            <div style="font-size:7px; color:#ddd; margin-top:1px;">终于来到大本钟了</div>
+            <div style="font-size:7px; color:#666; margin-top:2px;">❤️ 12 &nbsp;💬 3</div>
+          </div>
+        </div>
+        <div style="background:#1e1e1e; border-radius:6px; overflow:hidden;">
+          <div style="height:35px; background:linear-gradient(135deg,#f093fb,#f5576c);"></div>
+          <div style="padding:4px 6px;">
+            <div style="font-size:7px; color:#aaa;">🐼 慵懒熊猫</div>
+            <div style="font-size:7px; color:#ddd; margin-top:1px;">陌生人，祝你幸福</div>
+            <div style="font-size:7px; color:#666; margin-top:2px;">❤️ 47 &nbsp;💬 8</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#1a1a1a; border-radius:0 0 8px 8px; padding:6px 0 4px; display:flex; justify-content:space-around;">
+        <div style="text-align:center;">
+          <div style="font-size:14px;">🏠</div>
+          <div style="font-size:6px; color:#6366f1; margin-top:1px;">动态</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:22px; height:22px; background:#6366f1; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto; font-size:14px; color:#fff; font-weight:300;">+</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:14px;">👤</div>
+          <div style="font-size:6px; color:#555; margin-top:1px;">我的</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:11px; color:#6366f1; font-weight:600;">① 动态墙</div>
+    <div style="font-size:10px; color:#888; margin-top:2px;">落地页</div>
+  </div>
+
+  <!-- Arrow -->
+  <div style="display:flex; align-items:center; color:#444; font-size:18px; padding-top:20px;">→</div>
+
+  <!-- Phone: Post Detail -->
+  <div style="text-align:center;">
+    <div style="background:#111; border-radius:18px; padding:8px; width:130px; box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+      <div style="font-size:8px; color:#666; text-align:right; padding-bottom:4px;">9:41</div>
+      <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:6px 8px; display:flex; align-items:center; gap:6px;">
+        <span style="color:#888; font-size:10px;">←</span>
+        <span style="color:#fff; font-size:9px; font-weight:600;">留言详情</span>
+      </div>
+      <div style="background:#0d0d0d; padding:0;">
+        <div style="height:100px; background:linear-gradient(135deg,#667eea,#764ba2);"></div>
+        <div style="padding:8px;">
+          <div style="font-size:8px; color:#aaa; margin-bottom:3px;">🐧 蓝色企鹅 · 2026年4月23日</div>
+          <div style="font-size:8px; color:#eee; line-height:1.5; margin-bottom:8px;">终于来到大本钟了，想起初中背单词的日子...</div>
+          <div style="display:flex; gap:12px; margin-bottom:8px;">
+            <span style="font-size:9px; color:#e879f9;">❤️ 12</span>
+            <span style="font-size:9px; color:#888;">💬 评论 (3)</span>
+          </div>
+          <div style="border-top:1px solid #222; padding-top:6px;">
+            <div style="font-size:7px; color:#aaa; margin-bottom:4px;">🐼 慵懒熊猫：好美啊</div>
+            <div style="font-size:7px; color:#aaa;">🦊 小红狐：我也去过！</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:#1a1a1a; border-radius:0 0 8px 8px; padding:5px 8px; display:flex; gap:4px;">
+        <input style="flex:1; background:#0d0d0d; border:none; border-radius:10px; padding:3px 7px; font-size:7px; color:#888;" placeholder="写评论...">
+        <span style="font-size:10px; color:#6366f1;">发</span>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:11px; color:#6366f1; font-weight:600;">② 帖子详情</div>
+    <div style="font-size:10px; color:#888; margin-top:2px;">点击帖子进入</div>
+  </div>
+
+</div>
+
+<div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+
+  <!-- Phone: Create Post -->
+  <div style="text-align:center;">
+    <div style="background:#111; border-radius:18px; padding:8px; width:130px; box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+      <div style="font-size:8px; color:#666; text-align:right; padding-bottom:4px;">9:41</div>
+      <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:6px 8px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="color:#888; font-size:10px;">✕</span>
+        <span style="color:#fff; font-size:9px; font-weight:600;">发布留言</span>
+        <span style="font-size:8px; color:#6366f1; font-weight:600;">发布</span>
+      </div>
+      <div style="background:#0d0d0d; padding:8px; display:flex; flex-direction:column; gap:6px; border-radius:0 0 8px 8px;">
+        <div style="height:80px; background:#1a1a1a; border-radius:8px; border:1.5px dashed #333; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;">
+          <span style="font-size:18px;">📷</span>
+          <span style="font-size:7px; color:#555;">上传照片</span>
+        </div>
+        <textarea style="background:#1a1a1a; border:none; border-radius:8px; padding:6px; font-size:8px; color:#aaa; resize:none; height:50px;" placeholder="写下你的留言..."></textarea>
+        <div style="background:#1a1a1a; border-radius:8px; padding:6px; display:flex; align-items:center; gap:4px;">
+          <span style="font-size:10px;">🐧</span>
+          <span style="font-size:7px; color:#aaa;">蓝色企鹅（你的昵称）</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:11px; color:#6366f1; font-weight:600;">③ 发布页</div>
+    <div style="font-size:10px; color:#888; margin-top:2px;">点击 "+" 进入</div>
+  </div>
+
+  <!-- Arrow -->
+  <div style="display:flex; align-items:center; color:#444; font-size:18px; padding-top:20px;">→</div>
+
+  <!-- Phone: Share Card -->
+  <div style="text-align:center;">
+    <div style="background:#111; border-radius:18px; padding:8px; width:130px; box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+      <div style="font-size:8px; color:#666; text-align:right; padding-bottom:4px;">9:41</div>
+      <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:6px 8px; text-align:center;">
+        <span style="color:#fff; font-size:9px; font-weight:600;">发布成功 ✓</span>
+      </div>
+      <div style="background:#0d0d0d; padding:8px; border-radius:0 0 8px 8px;">
+        <!-- Share card preview -->
+        <div style="background:linear-gradient(135deg,#1e1b4b,#312e81); border-radius:10px; padding:8px; margin-bottom:8px;">
+          <div style="height:60px; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:6px; margin-bottom:6px;"></div>
+          <div style="font-size:7px; color:#c7d2fe; margin-bottom:2px;">🐧 蓝色企鹅</div>
+          <div style="font-size:7px; color:#e0e7ff; line-height:1.4; margin-bottom:6px;">终于来到大本钟了...</div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-size:6px; color:#818cf8;">大本钟留言墙</span>
+            <span style="font-size:7px; background:#312e81; color:#a5b4fc; padding:2px 5px; border-radius:4px; font-family:monospace;">XK7B2</span>
+          </div>
+        </div>
+        <div style="font-size:7px; color:#666; text-align:center; line-height:1.5;">截图保存到相册<br>短码 XK7B2 可找回帖子</div>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:11px; color:#6366f1; font-weight:600;">④ 分享卡片</div>
+    <div style="font-size:10px; color:#888; margin-top:2px;">发布后自动显示</div>
+  </div>
+
+  <!-- Arrow -->
+  <div style="display:flex; align-items:center; color:#444; font-size:18px; padding-top:20px;">→</div>
+
+  <!-- Phone: My Page -->
+  <div style="text-align:center;">
+    <div style="background:#111; border-radius:18px; padding:8px; width:130px; box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+      <div style="font-size:8px; color:#666; text-align:right; padding-bottom:4px;">9:41</div>
+      <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:6px 8px; text-align:center;">
+        <span style="color:#fff; font-size:9px; font-weight:600;">我的</span>
+      </div>
+      <div style="background:#0d0d0d; padding:8px; display:flex; flex-direction:column; gap:6px;">
+        <div style="text-align:center; padding:6px 0;">
+          <div style="font-size:22px; margin-bottom:3px;">🐧</div>
+          <div style="font-size:9px; color:#fff; font-weight:600;">蓝色企鹅</div>
+          <div style="font-size:7px; color:#666; margin-top:1px;">2条留言</div>
+        </div>
+        <div style="border-top:1px solid #1a1a1a; padding-top:6px;">
+          <div style="font-size:7px; color:#888; margin-bottom:4px;">我发布的</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:3px;">
+            <div style="aspect-ratio:1; background:linear-gradient(135deg,#667eea,#764ba2); border-radius:4px;"></div>
+            <div style="aspect-ratio:1; background:linear-gradient(135deg,#f093fb,#f5576c); border-radius:4px;"></div>
+          </div>
+        </div>
+        <div style="background:#1a1a1a; border-radius:8px; padding:5px 7px; display:flex; gap:4px; align-items:center;">
+          <input style="flex:1; background:transparent; border:none; font-size:7px; color:#888;" placeholder="输入短码找回帖子...">
+          <span style="font-size:7px; color:#6366f1;">找回</span>
+        </div>
+      </div>
+      <div style="background:#1a1a1a; border-radius:0 0 8px 8px; padding:6px 0 4px; display:flex; justify-content:space-around;">
+        <div style="text-align:center;">
+          <div style="font-size:14px;">🏠</div>
+          <div style="font-size:6px; color:#555; margin-top:1px;">动态</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="width:22px; height:22px; background:#333; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto; font-size:14px; color:#888;">+</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:14px;">👤</div>
+          <div style="font-size:6px; color:#6366f1; margin-top:1px;">我的</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:8px; font-size:11px; color:#6366f1; font-weight:600;">⑤ 我的</div>
+    <div style="font-size:10px; color:#888; margin-top:2px;">查看 / 短码找回</div>
+  </div>
+
+</div>
+
+<div style="margin-top:20px; padding:12px; background:#16213e; border-radius:10px; font-size:12px; color:#ccc; line-height:1.8;">
+  <strong style="color:#fff;">底部导航三个入口：</strong><br>
+  🏠 <strong style="color:#e0e0e0;">动态</strong> → 落地页，时间流 / 照片墙切换<br>
+  ＋ <strong style="color:#e0e0e0;">发布</strong> → 上传照片 + 写留言<br>
+  👤 <strong style="color:#e0e0e0;">我的</strong> → 我的帖子 + 短码找回
+</div>

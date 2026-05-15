@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #fdf6e9;
+  --card: #ffffff;
+  --primary: #b87333;
+  --text: #3d2b1f;
+  --text-muted: #92795a;
+  --border: #e8d9c0;
+  --nav-bg: #efe5d0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  max-width: 480px;
+  margin: 0 auto;
+}

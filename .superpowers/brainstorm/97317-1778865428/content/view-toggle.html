@@ -1,0 +1,84 @@
+<h2>视图切换方式 · 选哪种？</h2>
+<p class="subtitle">默认时间流，可切换到照片墙</p>
+
+<div class="options">
+
+  <!-- Option A: Top right icon toggle (Instagram style) -->
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>右上角图标切换</h3>
+      <p>导航栏右侧放两个小图标，当前视图高亮。类似 Instagram 的列表/格子切换。最简洁，不占额外空间。</p>
+      <div style="margin-top:10px; background:#111; border-radius:14px; padding:8px; max-width:180px;">
+        <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:7px 10px; display:flex; justify-content:space-between; align-items:center;">
+          <span style="color:#fff; font-size:10px; font-weight:600;">大本钟留言墙</span>
+          <div style="display:flex; gap:6px;">
+            <span style="font-size:13px; opacity:0.4;">⊞</span>
+            <span style="font-size:13px; color:#6366f1;">☰</span>
+          </div>
+        </div>
+        <div style="background:#0d0d0d; padding:6px; border-radius:0 0 8px 8px; display:flex; flex-direction:column; gap:5px;">
+          <div style="background:#1e1e1e; border-radius:8px; overflow:hidden;">
+            <div style="height:60px; background:linear-gradient(135deg,#667eea,#764ba2);"></div>
+            <div style="padding:5px 7px;">
+              <div style="font-size:8px; color:#ccc;">🐧 蓝色企鹅 · 3分钟前</div>
+              <div style="font-size:8px; color:#eee; margin-top:2px;">终于来到大本钟了</div>
+              <div style="font-size:8px; color:#888; margin-top:3px;">❤️ 12 &nbsp; 💬 3</div>
+            </div>
+          </div>
+          <div style="background:#1e1e1e; border-radius:8px; overflow:hidden;">
+            <div style="height:50px; background:linear-gradient(135deg,#f093fb,#f5576c);"></div>
+            <div style="padding:5px 7px;">
+              <div style="font-size:8px; color:#ccc;">🐼 慵懒熊猫 · 1小时前</div>
+              <div style="font-size:8px; color:#eee; margin-top:2px;">陌生人，祝你幸福</div>
+              <div style="font-size:8px; color:#888; margin-top:3px;">❤️ 47 &nbsp; 💬 8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option B: Pill toggle below header -->
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>标题栏下方胶囊切换</h3>
+      <p>导航栏下方放一个胶囊形切换按钮，文字标注「动态」/「照片墙」。更明显，用户一眼就知道有两个视图。</p>
+      <div style="margin-top:10px; background:#111; border-radius:14px; padding:8px; max-width:180px;">
+        <div style="background:#1a1a1a; border-radius:8px 8px 0 0; padding:7px 10px; text-align:center;">
+          <span style="color:#fff; font-size:10px; font-weight:600;">大本钟留言墙</span>
+        </div>
+        <div style="background:#1a1a1a; padding:5px 10px;">
+          <div style="background:#0d0d0d; border-radius:20px; display:flex; padding:2px; gap:2px;">
+            <div style="flex:1; background:#6366f1; border-radius:16px; text-align:center; padding:3px 0; font-size:8px; color:#fff; font-weight:600;">动态</div>
+            <div style="flex:1; text-align:center; padding:3px 0; font-size:8px; color:#666;">照片墙</div>
+          </div>
+        </div>
+        <div style="background:#0d0d0d; padding:6px; border-radius:0 0 8px 8px; display:flex; flex-direction:column; gap:5px;">
+          <div style="background:#1e1e1e; border-radius:8px; overflow:hidden;">
+            <div style="height:55px; background:linear-gradient(135deg,#667eea,#764ba2);"></div>
+            <div style="padding:5px 7px;">
+              <div style="font-size:8px; color:#ccc;">🐧 蓝色企鹅 · 3分钟前</div>
+              <div style="font-size:8px; color:#eee; margin-top:2px;">终于来到大本钟了</div>
+              <div style="font-size:8px; color:#888; margin-top:3px;">❤️ 12 &nbsp; 💬 3</div>
+            </div>
+          </div>
+          <div style="background:#1e1e1e; border-radius:8px; overflow:hidden;">
+            <div style="height:45px; background:linear-gradient(135deg,#f093fb,#f5576c);"></div>
+            <div style="padding:5px 7px;">
+              <div style="font-size:8px; color:#ccc;">🐼 · 1小时前</div>
+              <div style="font-size:8px; color:#eee; margin-top:2px;">陌生人，祝你幸福</div>
+              <div style="font-size:8px; color:#888; margin-top:3px;">❤️ 47 &nbsp; 💬 8</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:16px; padding:12px; background:#16213e; border-radius:10px; border-left:3px solid #10b981; font-size:12px; color:#ccc; line-height:1.6;">
+  💡 <strong style="color:#fff;">我的建议是 B</strong>：胶囊切换放在标题栏下方，用户更容易发现有两个视图可以切换——毕竟照片墙是一个值得被发现的「惊喜感」功能，藏在右上角图标里容易被忽略。
+</div>
