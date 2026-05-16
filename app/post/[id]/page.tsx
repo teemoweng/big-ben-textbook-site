@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import LikeButton from '@/components/LikeButton'
 import CommentList from '@/components/CommentList'
 import CommentInput from '@/components/CommentInput'
+import PhotoCarousel from '@/components/PhotoCarousel'
 
 export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -16,15 +17,17 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
 
   if (!post) notFound()
 
+  const photos = post.photo_urls?.length ? post.photo_urls : [post.photo_url]
+
   return (
     <div className="min-h-screen pb-8">
       <div className="flex items-center px-4 pt-12 pb-4" style={{ borderBottom: '1px solid var(--border)' }}>
         <Link href="/" className="text-xl mr-3" style={{ color: 'var(--text-muted)' }}>←</Link>
         <span className="font-medium" style={{ color: 'var(--text)' }}>留言详情</span>
       </div>
-      <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-        <Image src={post.photo_url} alt="留言照片" fill className="object-cover" sizes="(max-width: 480px) 100vw, 480px" />
-      </div>
+
+      <PhotoCarousel photos={photos} />
+
       <div className="px-4 py-4">
         <div className="flex items-center justify-between mb-3">
           <span className="font-medium" style={{ color: 'var(--text)' }}>{post.animal_nickname}</span>

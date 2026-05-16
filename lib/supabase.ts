@@ -11,6 +11,7 @@ export type Post = {
   device_id: string
   animal_nickname: string
   photo_url: string
+  photo_urls: string[]
   message: string
   created_at: string
   likes_count?: number
